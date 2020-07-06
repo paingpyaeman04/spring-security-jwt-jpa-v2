@@ -10,15 +10,14 @@ public class Role extends Auditable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Enumerated(EnumType.STRING)
 	@NotBlank
-	private ERole name;
+	private String name;
 
 	public Role() {
 
 	}
 
-	public Role(ERole name) {
+	public Role(String name) {
 		this.name = name;
 	}
 
@@ -30,11 +29,11 @@ public class Role extends Auditable {
 		this.id = id;
 	}
 
-	public ERole getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(ERole name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 }

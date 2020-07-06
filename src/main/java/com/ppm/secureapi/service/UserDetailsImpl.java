@@ -46,7 +46,7 @@ public class UserDetailsImpl implements UserDetails {
 
 	public static UserDetailsImpl build(User user) {
 		List<GrantedAuthority> authorities = user.getRoles().stream()
-				.map(role -> new SimpleGrantedAuthority(role.getName().name()))
+				.map(role -> new SimpleGrantedAuthority(role.getName()))
 				.collect(Collectors.toList());
 
 		return new UserDetailsImpl(
@@ -72,8 +72,6 @@ public class UserDetailsImpl implements UserDetails {
 	public String getEmail() {
 		return email;
 	}
-	
-	
 
 	@Override
 	public String getPassword() {
@@ -113,10 +111,6 @@ public class UserDetailsImpl implements UserDetails {
 			return false;
 		UserDetailsImpl user = (UserDetailsImpl) o;
 		return Objects.equals(id, user.id);
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 
 	public String getFirstName() {

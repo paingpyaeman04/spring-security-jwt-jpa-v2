@@ -41,8 +41,7 @@ public class User extends Auditable {
 	@NotBlank
 	private String password;
 	
-//	TODO set verified to false when mail service works
-	private boolean verified = true;
+	private boolean verified = false;
 
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(	name = "users_roles", 
